@@ -6,6 +6,7 @@ pipeline {
     }
 
     stages {
+
         stage('Run Tests in Docker') {
             steps {
                 script {
@@ -13,14 +14,14 @@ pipeline {
                     .inside('--network jenkins-net') {
 
                         sh '''
-                            cd /var/jenkins_home/workspace/jenkins_2
+                            echo "=== Current Directory ==="
+                            pwd
                             ls -la
 
                             echo "=== Install Dependencies ==="
                             pip install -r requirements.txt
 
                             echo "=== Run Tests ==="
-                            cd /var/jenkins_home/workspace/cd /var/jenkins_home/workspace/jenkins_2
                             pytest test_api.py -v --alluredir=allure-results
                         '''
                     }
