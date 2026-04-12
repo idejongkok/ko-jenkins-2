@@ -12,7 +12,7 @@ pipeline {
                     docker.image('python:3.13.9-slim').inside("--network jenkins-network") {
                         stage('Install Dependencies') {
                             sh '''
-                                cd /var/jenkins_home/workspace/API_Test
+                                cd /var/jenkins_home/workspace/jenkins_2
                                 ls -la
                                 pip install -r requirements.txt
                             '''
