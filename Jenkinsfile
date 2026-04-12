@@ -20,7 +20,7 @@ pipeline {
                             pip install -r requirements.txt
 
                             echo "=== Run Tests ==="
-                            cd /var/jenkins_home/workspace/API_Test
+                            cd /var/jenkins_home/workspace/cd /var/jenkins_home/workspace/jenkins_2
                             pytest test_api.py -v --alluredir=allure-results
                         '''
                     }
